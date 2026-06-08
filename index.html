@@ -1,0 +1,1734 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ALMASSE BEAUTY — Cosmétiques & Makeup</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --cream: #FAF7F4;
+      --warm-white: #F5F0EB;
+      --blush: #E8C4B8;
+      --rose: #C4846A;
+      --deep-rose: #8B4A3A;
+      --nude: #D4A898;
+      --text-dark: #2A1A15;
+      --text-mid: #6B4A40;
+      --text-light: #A08070;
+      --border: #E2D5CE;
+      --accent: #C4846A;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--text-dark);
+      font-size: 15px;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(250, 247, 244, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.7rem;
+      font-weight: 300;
+      letter-spacing: 0.25em;
+      color: var(--text-dark);
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-mid);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--text-dark);
+    }
+
+    .nav-cart {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: none;
+      border: 1px solid var(--border);
+      border-radius: 2rem;
+      padding: 0.45rem 1.1rem;
+      cursor: pointer;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      color: var(--text-dark);
+      transition: all 0.2s;
+    }
+
+    .nav-cart:hover {
+      background: var(--warm-white);
+      border-color: var(--nude);
+    }
+
+    .cart-count {
+      background: var(--rose);
+      color: white;
+      font-size: 0.65rem;
+      font-weight: 600;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero {
+      height: 100vh;
+      min-height: 600px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: linear-gradient(160deg, var(--cream) 0%, var(--warm-white) 50%, #EDD8CF 100%);
+      padding: 2rem;
+      padding-top: 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -30%;
+      right: -20%;
+      width: 65vw;
+      height: 65vw;
+      max-width: 700px;
+      max-height: 700px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(196, 132, 106, 0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -15%;
+      left: -10%;
+      width: 45vw;
+      height: 45vw;
+      max-width: 500px;
+      max-height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(232, 196, 184, 0.2) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      max-width: 650px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.7rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--rose);
+      font-weight: 500;
+      margin-bottom: 1.2rem;
+      display: block;
+    }
+
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 8vw, 5.5rem);
+      font-weight: 300;
+      line-height: 1.05;
+      color: var(--text-dark);
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.01em;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--rose);
+    }
+
+    .hero p {
+      font-size: 0.95rem;
+      color: var(--text-mid);
+      margin-bottom: 2.5rem;
+      font-weight: 300;
+      max-width: 420px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: var(--text-dark);
+      color: var(--cream);
+      border: none;
+      padding: 0.9rem 2.2rem;
+      border-radius: 2rem;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.25s;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn-primary:hover {
+      background: var(--deep-rose);
+      transform: translateY(-1px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--text-dark);
+      border: 1px solid var(--border);
+      padding: 0.9rem 2.2rem;
+      border-radius: 2rem;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.25s;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn-outline:hover {
+      border-color: var(--rose);
+      color: var(--rose);
+    }
+
+    section {
+      padding: 5rem 2.5rem;
+    }
+
+    .section-label {
+      font-size: 0.68rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--rose);
+      font-weight: 500;
+      margin-bottom: 0.8rem;
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 300;
+      color: var(--text-dark);
+      margin-bottom: 0.6rem;
+      line-height: 1.15;
+    }
+
+    .section-title em {
+      font-style: italic;
+      color: var(--rose);
+    }
+
+    .section-sub {
+      font-size: 0.88rem;
+      color: var(--text-light);
+      font-weight: 300;
+      max-width: 480px;
+    }
+
+    .section-header {
+      margin-bottom: 3rem;
+    }
+
+    #categories {
+      background: var(--warm-white);
+    }
+
+    .cat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 1rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .cat-card {
+      background: var(--cream);
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      padding: 1.8rem 1.2rem;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.25s;
+      text-decoration: none;
+    }
+
+    .cat-card:hover {
+      border-color: var(--nude);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(139, 74, 58, 0.08);
+    }
+
+    .cat-icon {
+      font-size: 2rem;
+      margin-bottom: 0.8rem;
+      display: block;
+    }
+
+    .cat-name {
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-mid);
+      font-weight: 500;
+    }
+
+    .cat-count {
+      font-size: 0.72rem;
+      color: var(--text-light);
+      margin-top: 0.3rem;
+    }
+
+    #products {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 5rem 2.5rem;
+    }
+
+    .filters {
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+      margin-bottom: 2.5rem;
+    }
+
+    .filter-btn {
+      border: 1px solid var(--border);
+      border-radius: 2rem;
+      padding: 0.45rem 1.2rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      background: transparent;
+      color: var(--text-mid);
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    .filter-btn.active,
+    .filter-btn:hover {
+      background: var(--text-dark);
+      color: var(--cream);
+      border-color: var(--text-dark);
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .product-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 1.2rem;
+      overflow: hidden;
+      transition: all 0.3s;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 36px rgba(139, 74, 58, 0.1);
+      border-color: var(--nude);
+    }
+
+    .product-card.out-of-stock {
+      opacity: 0.7;
+      background: #f9f9f9;
+    }
+
+    .product-img-placeholder {
+      width: 100%;
+      aspect-ratio: 1;
+      background: linear-gradient(135deg, var(--warm-white) 0%, var(--blush) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .product-img-placeholder img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      inset: 0;
+      transition: opacity 0.2s;
+    }
+
+    .product-badge {
+      position: absolute;
+      top: 0.8rem;
+      left: 0.8rem;
+      background: var(--rose);
+      color: white;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.7rem;
+      border-radius: 1rem;
+      z-index: 2;
+    }
+
+    .product-info {
+      padding: 1.2rem;
+    }
+
+    .product-category {
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--rose);
+      font-weight: 500;
+      margin-bottom: 0.3rem;
+    }
+
+    .product-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-weight: 400;
+      margin-bottom: 0.3rem;
+      line-height: 1.3;
+    }
+
+    .product-desc {
+      font-size: 0.78rem;
+      color: var(--text-light);
+      margin-bottom: 0.9rem;
+      line-height: 1.5;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .product-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .product-price {
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
+
+    .product-price span {
+      font-size: 0.75rem;
+      color: var(--text-light);
+      font-weight: 400;
+    }
+
+    .add-to-cart {
+      background: var(--text-dark);
+      color: var(--cream);
+      border: none;
+      border-radius: 2rem;
+      padding: 0.5rem 1.2rem;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .add-to-cart:hover {
+      background: var(--rose);
+    }
+
+    .add-to-cart.disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+
+    .out-of-stock-badge {
+      background: #e74c3c;
+      color: white;
+      font-size: 0.7rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 1rem;
+      display: inline-block;
+      margin-top: 0.5rem;
+    }
+
+    .color-swatch {
+      display: inline-block;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      cursor: pointer;
+      border: 2.5px solid white;
+      box-shadow: 0 0 0 1.5px #ddd;
+      margin-right: 6px;
+      transition: transform 0.15s, box-shadow 0.15s;
+      background: none;
+      padding: 0;
+      flex-shrink: 0;
+    }
+
+    .color-swatch:hover {
+      transform: scale(1.12);
+    }
+
+    .color-swatch.selected {
+      box-shadow: 0 0 0 2.5px var(--rose);
+      transform: scale(1.18);
+    }
+
+    /* Color picker section */
+    .color-picker-section {
+      margin: 1rem 0 1.2rem;
+    }
+
+    .color-picker-label {
+      font-size: 0.76rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-mid);
+      font-weight: 500;
+      margin-bottom: 0.6rem;
+    }
+
+    .color-picker-chosen {
+      color: var(--text-dark);
+      font-weight: 600;
+      text-transform: none;
+      letter-spacing: 0;
+    }
+
+    .colors-container {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    /* Image wrapper with badge overlay */
+    .detail-img-wrap {
+      position: relative;
+      border-radius: 1rem;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--warm-white);
+    }
+
+    .detail-img-wrap img {
+      width: 100%;
+      display: block;
+      border-radius: 1rem;
+      transition: opacity 0.16s ease;
+    }
+
+    .detail-img-color-badge {
+      position: absolute;
+      bottom: 0.75rem;
+      left: 0.75rem;
+      background: rgba(250, 247, 244, 0.92);
+      backdrop-filter: blur(8px);
+      border: 1px solid var(--border);
+      border-radius: 2rem;
+      padding: 0.3rem 0.75rem 0.3rem 0.45rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--text-dark);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    .detail-color-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(255, 255, 255, 0.8);
+      box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+      flex-shrink: 0;
+    }
+
+    .pagination {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .pagination .page-btn {
+      border: 1px solid var(--border);
+      border-radius: 2rem;
+      padding: 0.4rem 0.8rem;
+      cursor: pointer;
+      background: white;
+      transition: 0.2s;
+    }
+
+    .pagination .page-btn.active {
+      background: var(--text-dark);
+      color: white;
+      border-color: var(--text-dark);
+    }
+
+    .cart-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(42, 26, 21, 0.4);
+      z-index: 200;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s;
+    }
+
+    .cart-overlay.open {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .cart-drawer {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: min(420px, 100vw);
+      background: var(--cream);
+      z-index: 201;
+      transform: translateX(100%);
+      transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      display: flex;
+      flex-direction: column;
+      border-left: 1px solid var(--border);
+    }
+
+    .cart-drawer.open {
+      transform: translateX(0);
+    }
+
+    .cart-header {
+      padding: 1.5rem 1.8rem;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .cart-header h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-weight: 400;
+    }
+
+    .close-cart {
+      background: none;
+      border: none;
+      font-size: 1.4rem;
+      cursor: pointer;
+      color: var(--text-mid);
+    }
+
+    .cart-items {
+      flex: 1;
+      overflow-y: auto;
+      padding: 1.5rem 1.8rem;
+    }
+
+    .cart-empty {
+      text-align: center;
+      padding: 3rem 0;
+      color: var(--text-light);
+    }
+
+    .cart-item {
+      display: flex;
+      gap: 1rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--border);
+      align-items: flex-start;
+    }
+
+    .cart-item-img {
+      width: 70px;
+      height: 70px;
+      border-radius: 0.8rem;
+      background: var(--warm-white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--border);
+      flex-shrink: 0;
+      overflow: hidden;
+    }
+
+    .cart-item-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .cart-item-img .no-img {
+      font-size: 1.5rem;
+      color: var(--text-light);
+    }
+
+    .cart-item-details {
+      flex: 1;
+    }
+
+    .cart-item-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .cart-item-option {
+      font-size: 0.75rem;
+      color: var(--text-mid);
+      margin-top: 0.2rem;
+    }
+
+    .cart-item-price {
+      font-size: 0.85rem;
+      color: var(--text-mid);
+      margin-top: 0.2rem;
+    }
+
+    .cart-item-qty {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-top: 0.5rem;
+    }
+
+    .qty-btn {
+      background: var(--warm-white);
+      border: 1px solid var(--border);
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: 0.15s;
+    }
+
+    .qty-btn:hover {
+      background: var(--blush);
+    }
+
+    .qty-num {
+      font-size: 0.85rem;
+      font-weight: 500;
+      min-width: 20px;
+      text-align: center;
+    }
+
+    .remove-item {
+      background: none;
+      border: none;
+      color: var(--text-light);
+      cursor: pointer;
+      font-size: 1.1rem;
+      padding: 0.2rem;
+    }
+
+    .remove-item:hover {
+      color: var(--rose);
+    }
+
+    .cart-footer {
+      padding: 1.5rem 1.8rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .cart-subtotal {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+    }
+
+    .cart-subtotal strong {
+      font-size: 1.1rem;
+    }
+
+    .btn-checkout {
+      width: 100%;
+      background: var(--text-dark);
+      color: var(--cream);
+      border: none;
+      border-radius: 2rem;
+      padding: 1rem;
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .btn-checkout:hover {
+      background: var(--deep-rose);
+    }
+
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(42, 26, 21, 0.5);
+      z-index: 300;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s;
+    }
+
+    .modal-overlay.open {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .modal {
+      background: var(--cream);
+      border-radius: 1.5rem;
+      width: 100%;
+      max-width: 560px;
+      max-height: 92vh;
+      overflow-y: auto;
+      transform: scale(0.95) translateY(20px);
+      transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      padding: 2.5rem;
+    }
+
+    .modal-overlay.open .modal {
+      transform: scale(1) translateY(0);
+    }
+
+    .product-detail-modal .modal {
+      max-width: 800px;
+      padding: 2rem;
+    }
+
+    .product-detail-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .product-detail-image {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .product-detail-image img {
+      width: 100%;
+      border-radius: 1rem;
+      border: 1px solid var(--border);
+    }
+
+    .product-detail-info {
+      flex: 2;
+    }
+
+    .product-detail-category {
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--rose);
+      margin-bottom: 0.5rem;
+    }
+
+    .product-detail-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 300;
+      margin-bottom: 0.5rem;
+    }
+
+    .product-detail-price {
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: var(--text-dark);
+      margin: 1rem 0;
+    }
+
+    .product-detail-price span {
+      font-size: 1rem;
+      color: var(--text-light);
+    }
+
+    .product-detail-desc {
+      color: var(--text-mid);
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+
+    .product-detail-actions {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    /* Section "Pourquoi nous choisir" */
+    #about {
+      background: var(--text-dark);
+      color: var(--cream);
+      text-align: center;
+    }
+
+    #about .section-label {
+      color: var(--blush);
+    }
+
+    #about .section-title {
+      color: var(--cream);
+    }
+
+    #about .section-sub {
+      color: rgba(245, 240, 235, 0.65);
+      max-width: 540px;
+      margin: 0 auto;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      max-width: 900px;
+      margin: 3rem auto 0;
+    }
+
+    .feature {
+      text-align: center;
+    }
+
+    .feature-icon {
+      font-size: 1.8rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .feature-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-weight: 300;
+      margin-bottom: 0.4rem;
+      color: var(--blush);
+    }
+
+    .feature-desc {
+      font-size: 0.8rem;
+      color: rgba(245, 240, 235, 0.55);
+      line-height: 1.6;
+    }
+
+    /* Fenêtre de confirmation commande */
+    .success-screen {
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    .success-icon {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .success-screen h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 300;
+      margin-bottom: 0.8rem;
+    }
+
+    .success-screen p {
+      color: var(--text-light);
+      font-size: 0.9rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .order-id {
+      background: var(--warm-white);
+      border-radius: 0.8rem;
+      padding: 0.8rem 1.5rem;
+      display: inline-block;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--text-mid);
+      margin-bottom: 1.5rem;
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%) translateY(80px);
+      background: var(--text-dark);
+      color: var(--cream);
+      padding: 0.8rem 1.8rem;
+      border-radius: 2rem;
+      font-size: 0.82rem;
+      font-weight: 500;
+      z-index: 400;
+      transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      white-space: nowrap;
+    }
+
+    .toast.show {
+      transform: translateX(-50%) translateY(0);
+    }
+
+    /* ── Checkout Modal ── */
+    .modal-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-weight: 300;
+      margin-bottom: 0.3rem;
+      color: var(--text-dark);
+    }
+
+    .modal-sub {
+      font-size: 0.82rem;
+      color: var(--text-light);
+      margin-bottom: 1.5rem;
+    }
+
+    .order-summary {
+      background: var(--warm-white);
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      padding: 1.2rem 1.4rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .order-summary-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem;
+      font-weight: 400;
+      margin-bottom: 0.8rem;
+      color: var(--text-dark);
+      letter-spacing: 0.04em;
+    }
+
+    .summary-item {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.82rem;
+      color: var(--text-mid);
+      padding: 0.35rem 0;
+      border-bottom: 1px dashed var(--border);
+    }
+
+    .summary-item:last-child {
+      border-bottom: none;
+    }
+
+    .summary-item.total {
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--text-dark);
+      margin-top: 0.4rem;
+      padding-top: 0.6rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .form-group {
+      margin-bottom: 1rem;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-mid);
+      font-weight: 500;
+      margin-bottom: 0.4rem;
+    }
+
+    .form-input,
+    .form-select,
+    .form-textarea {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      background: white;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.88rem;
+      color: var(--text-dark);
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      appearance: none;
+    }
+
+    .form-input:focus,
+    .form-select:focus,
+    .form-textarea:focus {
+      border-color: var(--rose);
+      box-shadow: 0 0 0 3px rgba(196, 132, 106, 0.15);
+    }
+
+    .form-textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+
+    .delivery-options {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .delivery-option {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.9rem 1.1rem;
+      border: 1.5px solid var(--border);
+      border-radius: 0.9rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      background: white;
+    }
+
+    .delivery-option.selected {
+      border-color: var(--rose);
+      background: rgba(196, 132, 106, 0.05);
+    }
+
+    .delivery-option input[type="radio"] {
+      accent-color: var(--rose);
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+    }
+
+    .delivery-option-info {
+      flex: 1;
+    }
+
+    .delivery-option-name {
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--text-dark);
+    }
+
+    .delivery-option-detail {
+      font-size: 0.75rem;
+      color: var(--text-light);
+      margin-top: 0.15rem;
+    }
+
+    .delivery-option-price {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--deep-rose);
+      white-space: nowrap;
+    }
+
+    /* ── Success screen ── */
+    .success-screen .success-icon {
+      color: var(--rose);
+      animation: pop 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    @keyframes pop {
+      from {
+        transform: scale(0);
+        opacity: 0;
+      }
+
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    footer {
+      background: var(--text-dark);
+      color: rgba(245, 240, 235, 0.5);
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.78rem;
+    }
+
+    footer a {
+      color: var(--blush);
+      text-decoration: none;
+    }
+
+    @media (max-width: 640px) {
+      nav {
+        padding: 0 1.2rem;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      section,
+      #products {
+        padding: 3.5rem 1.2rem;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .modal {
+        padding: 1.8rem 1.4rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <a href="#" class="nav-logo">ALMASSE BEAUTY</a>
+    <ul class="nav-links">
+      <li><a href="#categories">Catégories</a></li>
+      <li><a href="#products">Produits</a></li>
+      <li><a href="#about">À propos</a></li>
+    </ul>
+    <button class="nav-cart" onclick="toggleCart()"><span>🛒</span><span id="cart-count"
+        class="cart-count">0</span></button>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-content"><span class="hero-eyebrow">Collection Algérie 2025</span>
+      <h1>La beauté<br><em>redéfinie</em></h1>
+      <p>Soins et maquillage de qualité premium, livrés partout en Algérie — 58 wilayas couvertes.</p>
+      <div class="hero-btns"><a href="#products" class="btn-primary">Découvrir</a><a href="#categories"
+          class="btn-outline">Catégories</a></div>
+    </div>
+  </section>
+
+  <section id="categories">
+    <div style="max-width:1100px;margin:0 auto;">
+      <div class="section-header">
+        <div class="section-label">Explorer</div>
+        <h2 class="section-title">Nos <em>catégories</em></h2>
+        <p class="section-sub">Du soin quotidien aux looks audacieux, trouvez votre essentiel beauté.</p>
+      </div>
+      <div class="cat-grid" id="cat-grid"></div>
+    </div>
+  </section>
+
+  <section id="products">
+    <div class="section-header">
+      <div class="section-label">Boutique</div>
+      <h2 class="section-title">Nos <em>produits</em></h2>
+      <p class="section-sub">Sélectionnés pour leur qualité et leur efficacité.</p>
+    </div>
+    <div class="filters" id="filter-bar"></div>
+    <div class="products-grid" id="products-grid"></div>
+    <div id="pagination-container" class="pagination"></div>
+  </section>
+
+  <section id="about">
+    <div class="section-label">Notre promesse</div>
+    <h2 class="section-title">Pourquoi <em>nous choisir</em></h2>
+    <p class="section-sub">La beauté authentique, accessible à toutes les femmes algériennes.</p>
+    <div class="features-grid">
+      <div class="feature">
+        <div class="feature-icon">✦</div>
+        <div class="feature-title">Livraison 58 wilayas</div>
+        <div class="feature-desc">Nous livrons dans toute l'Algérie, avec un suivi de votre commande.</div>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">◈</div>
+        <div class="feature-title">Sans inscription</div>
+        <div class="feature-desc">Commandez en quelques clics, sans créer de compte.</div>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">❋</div>
+        <div class="feature-title">Qualité certifiée</div>
+        <div class="feature-desc">Chaque produit est sélectionné selon des critères stricts.</div>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">⊹</div>
+        <div class="feature-title">Paiement à la livraison</div>
+        <div class="feature-desc">Réglez à la réception de votre colis, en toute sécurité.</div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 ALMASSE. Tous droits réservés. &nbsp;|&nbsp; <a href="admin.html">Admin</a></p>
+  </footer>
+
+  <div class="cart-overlay" id="cart-overlay" onclick="toggleCart()"></div>
+  <div class="cart-drawer" id="cart-drawer">
+    <div class="cart-header">
+      <h2>Mon panier</h2><button class="close-cart" onclick="toggleCart()">✕</button>
+    </div>
+    <div class="cart-items" id="cart-items">
+      <div class="cart-empty">Votre panier est vide</div>
+    </div>
+    <div class="cart-footer">
+      <div class="cart-subtotal"><span>Sous-total (hors livraison)</span><strong id="cart-total">0 DA</strong></div>
+      <button class="btn-checkout" onclick="openCheckout()">Passer commande</button>
+    </div>
+  </div>
+
+  <div class="modal-overlay product-detail-modal" id="product-detail-modal">
+    <div class="modal" id="product-detail-content"></div>
+  </div>
+
+  <div class="modal-overlay" id="checkout-modal">
+    <div class="modal" id="checkout-form-wrap">
+      <h2 class="modal-title">Finaliser la commande</h2>
+      <p class="modal-sub">Renseignez vos informations de livraison — paiement à la réception.</p>
+      <div class="order-summary" id="order-summary-box"></div>
+      <div class="form-row">
+        <div class="form-group"><label class="form-label">Prénom *</label><input class="form-input" id="f-prenom"
+            type="text" placeholder="Aicha"></div>
+        <div class="form-group"><label class="form-label">Nom *</label><input class="form-input" id="f-nom" type="text"
+            placeholder="Benali"></div>
+      </div>
+      <div class="form-group"><label class="form-label">Téléphone *</label><input class="form-input" id="f-tel"
+          type="tel" placeholder="0550 000 000"></div>
+      <div class="form-group"><label class="form-label">Wilaya *</label><select class="form-select" id="f-wilaya"
+          onchange="updateDeliveryFee()">
+          <option value="">Sélectionnez votre wilaya</option>
+        </select></div>
+      <div class="form-group"><label class="form-label">Commune / Adresse *</label><input class="form-input"
+          id="f-adresse" type="text" placeholder="N° rue, commune"></div>
+      <div class="form-group"><label class="form-label">Mode de livraison</label>
+        <div class="delivery-options" id="delivery-options"><label class="delivery-option selected" id="opt-home"><input
+              type="radio" name="delivery" value="home" checked onchange="selectDelivery(this.parentElement)">
+            <div class="delivery-option-info">
+              <div class="delivery-option-name">Livraison à domicile</div>
+              <div class="delivery-option-detail">2–5 jours ouvrables</div>
+            </div>
+            <div class="delivery-option-price" id="price-home">—</div>
+          </label><label class="delivery-option" id="opt-bureau"><input type="radio" name="delivery" value="bureau"
+              onchange="selectDelivery(this.parentElement)">
+            <div class="delivery-option-info">
+              <div class="delivery-option-name">Retrait en bureau</div>
+              <div class="delivery-option-detail">Plus rapide — bureau de wilaya</div>
+            </div>
+            <div class="delivery-option-price" id="price-bureau">—</div>
+          </label></div>
+      </div>
+      <div class="form-group"><label class="form-label">Notes (optionnel)</label><textarea class="form-textarea"
+          id="f-notes" placeholder="Instructions supplémentaires..."></textarea></div>
+      <div style="display:flex;gap:1rem;margin-top:1rem;"><button class="btn-outline" style="flex:1"
+          onclick="closeCheckout()">Retour</button><button class="btn-primary" style="flex:2"
+          onclick="submitOrder()">Confirmer la commande</button></div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script>
+    const API = window.location.origin + '/api';
+    let cart = JSON.parse(localStorage.getItem('lumiere_cart') || '[]');
+    let products = [];
+    let activeFilter = 'all';
+    let selectedWilaya = null;
+    let deliveryMode = 'home';
+    let currentPage = 1;
+    let totalPages = 1;
+    let currentCategory = 'all';
+    let colorsCache = {};
+
+    const BASE_WILAYAS = [
+      { id: 1, name: "Adrar", home: 450, bureau: 350 }, { id: 2, name: "Chlef", home: 350, bureau: 250 }, { id: 3, name: "Laghouat", home: 400, bureau: 300 }, { id: 4, name: "Oum El Bouaghi", home: 380, bureau: 280 },
+      { id: 5, name: "Batna", home: 380, bureau: 280 }, { id: 6, name: "Béjaïa", home: 350, bureau: 250 }, { id: 7, name: "Biskra", home: 400, bureau: 300 }, { id: 8, name: "Béchar", home: 450, bureau: 350 },
+      { id: 9, name: "Blida", home: 300, bureau: 200 }, { id: 10, name: "Bouira", home: 320, bureau: 220 }, { id: 11, name: "Tamanrasset", home: 500, bureau: 400 }, { id: 12, name: "Tébessa", home: 400, bureau: 300 },
+      { id: 13, name: "Tlemcen", home: 370, bureau: 270 }, { id: 14, name: "Tiaret", home: 370, bureau: 270 }, { id: 15, name: "Tizi Ouzou", home: 330, bureau: 230 }, { id: 16, name: "Alger", home: 280, bureau: 180 },
+      { id: 17, name: "Djelfa", home: 380, bureau: 280 }, { id: 18, name: "Jijel", home: 360, bureau: 260 }, { id: 19, name: "Sétif", home: 360, bureau: 260 }, { id: 20, name: "Saïda", home: 380, bureau: 280 },
+      { id: 21, name: "Skikda", home: 360, bureau: 260 }, { id: 22, name: "Sidi Bel Abbès", home: 360, bureau: 260 }, { id: 23, name: "Annaba", home: 360, bureau: 260 }, { id: 24, name: "Guelma", home: 370, bureau: 270 },
+      { id: 25, name: "Constantine", home: 350, bureau: 250 }, { id: 26, name: "Médéa", home: 320, bureau: 220 }, { id: 27, name: "Mostaganem", home: 360, bureau: 260 }, { id: 28, name: "M'Sila", home: 380, bureau: 280 },
+      { id: 29, name: "Mascara", home: 370, bureau: 270 }, { id: 30, name: "Ouargla", home: 430, bureau: 330 }, { id: 31, name: "Oran", home: 300, bureau: 200 }, { id: 32, name: "El Bayadh", home: 420, bureau: 320 },
+      { id: 33, name: "Illizi", home: 500, bureau: 400 }, { id: 34, name: "Bordj Bou Arréridj", home: 360, bureau: 260 }, { id: 35, name: "Boumerdès", home: 300, bureau: 200 }, { id: 36, name: "El Tarf", home: 370, bureau: 270 },
+      { id: 37, name: "Tindouf", home: 500, bureau: 400 }, { id: 38, name: "Tissemsilt", home: 380, bureau: 280 }, { id: 39, name: "El Oued", home: 420, bureau: 320 }, { id: 40, name: "Khenchela", home: 390, bureau: 290 },
+      { id: 41, name: "Souk Ahras", home: 370, bureau: 270 }, { id: 42, name: "Tipaza", home: 290, bureau: 190 }, { id: 43, name: "Mila", home: 360, bureau: 260 }, { id: 44, name: "Aïn Defla", home: 340, bureau: 240 },
+      { id: 45, name: "Naâma", home: 430, bureau: 330 }, { id: 46, name: "Aïn Témouchent", home: 360, bureau: 260 }, { id: 47, name: "Ghardaïa", home: 420, bureau: 320 }, { id: 48, name: "Relizane", home: 360, bureau: 260 },
+      { id: 49, name: "Timimoun", home: 460, bureau: 360 }, { id: 50, name: "Bordj Badji Mokhtar", home: 520, bureau: 420 }, { id: 51, name: "Ouled Djellal", home: 420, bureau: 320 }, { id: 52, name: "Béni Abbès", home: 460, bureau: 360 },
+      { id: 53, name: "In Salah", home: 490, bureau: 390 }, { id: 54, name: "In Guezzam", home: 510, bureau: 410 }, { id: 55, name: "Touggourt", home: 420, bureau: 320 }, { id: 56, name: "Djanet", home: 510, bureau: 410 },
+      { id: 57, name: "El M'Ghair", home: 430, bureau: 330 }, { id: 58, name: "El Meniaa", home: 450, bureau: 350 }
+    ];
+
+    function loadWilayasWithOverrides() {
+      const saved = localStorage.getItem('almasse_delivery_rates');
+      if (saved) try { const overrides = JSON.parse(saved); return BASE_WILAYAS.map(w => ({ ...w, home: overrides[w.id]?.home ?? w.home, bureau: overrides[w.id]?.bureau ?? w.bureau })); } catch (e) { }
+      return [...BASE_WILAYAS];
+    }
+    let WILAYAS = loadWilayasWithOverrides();
+
+    const CATEGORIES = [
+      { id: "all", name: "Tous", icon: "✦", count: null }, { id: "visage", name: "Visage", icon: "🧴", count: null },
+      { id: "yeux", name: "Yeux", icon: "👁", count: null }, { id: "levres", name: "Lèvres", icon: "💄", count: null },
+      { id: "ongles", name: "Ongles", icon: "💅", count: null }, { id: "soin", name: "Soins", icon: "🌸", count: null },
+      { id: "parfum", name: "Parfums", icon: "🌺", count: null }
+    ];
+
+    function showToast(msg) { const t = document.getElementById('toast'); t.textContent = msg; t.classList.add('show'); setTimeout(() => t.classList.remove('show'), 2800); }
+    function formatPrice(n) { return n.toLocaleString('fr-DZ'); }
+    function getCatName(id) { const c = CATEGORIES.find(c => c.id === id); return c ? c.name : id; }
+
+    async function loadProductColors(productId) {
+      if (colorsCache[productId]) return colorsCache[productId];
+      try { const res = await fetch(`${API}/product-colors/product/${productId}`); const data = await res.json(); colorsCache[productId] = data; return data; } catch (e) { return []; }
+    }
+
+    async function loadProducts(page = 1) {
+      currentPage = page;
+      try {
+        let url = `${API}/products?page=${page}&limit=12`;
+        if (currentCategory !== 'all') url += `&category=${currentCategory}`;
+        const res = await fetch(url);
+        if (!res.ok) throw new Error();
+        const data = await res.json();
+        products = data.products;
+        totalPages = data.totalPages;
+        await Promise.all(products.map(async p => { p.colors = await loadProductColors(p.id); }));
+        renderProducts(products);
+        updateCategoryCounts();
+        renderPagination();
+        cart = cart.filter(item => products.some(p => p.id === item.id && p.stock > 0));
+        saveCart(); renderCart();
+      } catch (err) { console.error(err); showToast("Erreur chargement produits"); products = []; renderProducts([]); updateCategoryCounts(); renderPagination(); }
+    }
+
+    function updateCategoryCounts() {
+      CATEGORIES.forEach(cat => { if (cat.id === 'all') cat.count = products.length; else cat.count = products.filter(p => p.category === cat.id).length; });
+      renderCategories(); renderFilters();
+    }
+    function renderCategories() {
+      const grid = document.getElementById('cat-grid');
+      grid.innerHTML = CATEGORIES.filter(c => c.id !== 'all').map(c => `<a href="#products" class="cat-card" onclick="filterProducts('${c.id}')"><span class="cat-icon">${c.icon}</span><div class="cat-name">${c.name}</div><div class="cat-count">${c.count || 0} produit${(c.count || 0) !== 1 ? 's' : ''}</div></a>`).join('');
+    }
+    function renderFilters() {
+      const bar = document.getElementById('filter-bar');
+      bar.innerHTML = CATEGORIES.map(c => `<button class="filter-btn ${activeFilter === c.id ? 'active' : ''}" onclick="filterProducts('${c.id}')">${c.name}${c.count !== null ? ' (' + c.count + ')' : ''}</button>`).join('');
+    }
+
+    function renderProducts(list) {
+      const filtered = activeFilter === 'all' ? list : list.filter(p => p.category === activeFilter);
+      const grid = document.getElementById('products-grid');
+      if (!filtered.length) { grid.innerHTML = '<p style="color:var(--text-light);font-size:.9rem;grid-column:1/-1;padding:2rem 0;">Aucun produit dans cette catégorie.</p>'; return; }
+      grid.innerHTML = filtered.map(p => {
+        const outOfStock = p.stock <= 0;
+        const addButton = outOfStock ? '<button class="add-to-cart disabled" disabled>Rupture</button>' : `<button class="add-to-cart" onclick="event.stopPropagation(); addToCart(${p.id})">+ Ajouter</button>`;
+        const stockBadge = outOfStock ? '<div class="out-of-stock-badge">⚠️ Rupture de stock</div>' : '';
+        const mainImage = p.image ? p.image : '';
+        const firstColorImage = (p.colors && p.colors.length > 0 && p.colors[0].image_url) ? window.location.origin + p.colors[0].image_url : null;
+        return `
+        <div class="product-card ${outOfStock ? 'out-of-stock' : ''}" data-product-id="${p.id}" data-main-image="${mainImage}" data-hover-image="${firstColorImage || mainImage}">
+          <div class="product-img-placeholder">
+            <img src="${mainImage}" alt="${p.name}" class="product-main-img" style="opacity:1;">
+            ${!mainImage ? '<span style="position:relative;z-index:1;font-size:2rem;color:var(--text-light);">✧</span>' : ''}
+            ${p.badge ? `<span class="product-badge">${p.badge}</span>` : ''}
+          </div>
+          <div class="product-info">
+            <div class="product-category">${getCatName(p.category)}</div>
+            <div class="product-name">${p.name}</div>
+            <div class="product-desc">${p.desc || ''}</div>
+            ${stockBadge}
+            <div class="product-footer"><div class="product-price">${formatPrice(p.price)} <span>DA</span></div>${addButton}</div>
+          </div>
+        </div>
+      `;
+      }).join('');
+      document.querySelectorAll('.product-card').forEach(card => {
+        const mainImg = card.querySelector('.product-main-img');
+        if (!mainImg) return;
+        const hoverImg = card.dataset.hoverImage;
+        const originalSrc = card.dataset.mainImage;
+        card.addEventListener('mouseenter', () => { if (hoverImg && hoverImg !== originalSrc) mainImg.src = hoverImg; });
+        card.addEventListener('mouseleave', () => { mainImg.src = originalSrc; });
+        card.addEventListener('click', () => { const pid = parseInt(card.dataset.productId); openProductDetail(pid); });
+      });
+    }
+
+    function filterProducts(cat) { currentCategory = cat; activeFilter = cat; loadProducts(1); }
+    function renderPagination() {
+      const container = document.getElementById('pagination-container');
+      if (!container) return;
+      if (totalPages <= 1) { container.innerHTML = ''; return; }
+      let html = '';
+      for (let i = 1; i <= totalPages; i++) html += `<button class="page-btn ${i === currentPage ? 'active' : ''}" onclick="loadProducts(${i})">${i}</button>`;
+      container.innerHTML = html;
+    }
+
+    async function openProductDetail(productId) {
+      const product = products.find(p => p.id === productId);
+      if (!product || product.stock <= 0) { showToast("Produit non disponible"); return; }
+      const colors = await loadProductColors(productId);
+      const modal = document.getElementById('product-detail-modal');
+      const content = document.getElementById('product-detail-content');
+
+      // Build color picker HTML
+      let colorsHtml = '';
+      if (colors && colors.length > 0) {
+        colorsHtml = `
+          <div class="color-picker-section">
+            <div class="color-picker-label">
+              Teinte : <span id="color-selected-label" class="color-picker-chosen">${colors[0].color_name}</span>
+            </div>
+            <div class="colors-container">
+              ${colors.map((c, idx) => `
+                <button type="button"
+                  class="color-swatch ${idx === 0 ? 'selected' : ''}"
+                  style="background-color:${c.color_hex};"
+                  data-color-id="${c.id}"
+                  data-image="${c.image_url ? window.location.origin + c.image_url : ''}"
+                  data-color-name="${c.color_name}"
+                  data-color-hex="${c.color_hex}"
+                  title="${c.color_name}">
+                </button>
+              `).join('')}
+            </div>
+          </div>`;
+      }
+
+      // Set initial image = first color image if exists, else product image
+      const firstColorImg = (colors && colors.length > 0 && colors[0].image_url)
+        ? window.location.origin + colors[0].image_url
+        : (product.image ? window.location.origin + product.image : '');
+
+      content.innerHTML = `
+        <div class="product-detail-content">
+          <div class="product-detail-image">
+            <div class="detail-img-wrap">
+              <img id="detail-main-img"
+                src="${firstColorImg}"
+                alt="${product.name}"
+                data-default-src="${product.image ? window.location.origin + product.image : ''}"
+                data-selected-color="${colors && colors.length > 0 ? colors[0].color_name : ''}"
+                data-selected-color-hex="${colors && colors.length > 0 ? colors[0].color_hex : ''}"
+                data-selected-color-image="${firstColorImg}">
+              ${colors && colors.length > 0 ? `
+                <div class="detail-img-color-badge" id="detail-color-badge">
+                  <span class="detail-color-dot" id="detail-color-dot" style="background:${colors[0].color_hex};"></span>
+                  <span id="detail-color-badge-label">${colors[0].color_name}</span>
+                </div>` : ''}
+            </div>
+          </div>
+          <div class="product-detail-info">
+            <div class="product-detail-category">${getCatName(product.category)}</div>
+            <div class="product-detail-name">${product.name}</div>
+            <div class="product-detail-price">${formatPrice(product.price)} <span>DA</span></div>
+            <div class="product-detail-desc">${product.details || product.desc || 'Description non disponible.'}</div>
+            ${colorsHtml}
+            <div class="product-detail-actions">
+              <button class="btn-primary" onclick="addToCartFromDetail(${product.id})">Ajouter au panier</button>
+              <button class="btn-outline" onclick="closeProductDetail()">Fermer</button>
+            </div>
+          </div>
+        </div>`;
+
+      // Attach swatch events
+      if (colors && colors.length > 0) {
+        document.querySelectorAll('.color-swatch').forEach(swatch => {
+          swatch.addEventListener('click', () => {
+            document.querySelectorAll('.color-swatch').forEach(s => s.classList.remove('selected'));
+            swatch.classList.add('selected');
+
+            const imgUrl = swatch.dataset.image;
+            const colorName = swatch.dataset.colorName;
+            const colorHex = swatch.dataset.colorHex;
+            const mainImg = document.getElementById('detail-main-img');
+
+            // Fade-swap image
+            if (mainImg) {
+              mainImg.style.opacity = '0';
+              setTimeout(() => {
+                if (imgUrl) mainImg.src = imgUrl;
+                mainImg.style.opacity = '1';
+              }, 160);
+              mainImg.dataset.selectedColor = colorName;
+              mainImg.dataset.selectedColorHex = colorHex;
+              mainImg.dataset.selectedColorImage = imgUrl || '';
+            }
+
+            // Update labels
+            const label = document.getElementById('color-selected-label');
+            if (label) label.textContent = colorName;
+            const badge = document.getElementById('detail-color-badge');
+            const badgeDot = document.getElementById('detail-color-dot');
+            const badgeLabel = document.getElementById('detail-color-badge-label');
+            if (badge) badge.style.display = 'flex';
+            if (badgeDot) badgeDot.style.background = colorHex;
+            if (badgeLabel) badgeLabel.textContent = colorName;
+          });
+        });
+      }
+
+      modal.classList.add('open');
+    }
+    function closeProductDetail() { document.getElementById('product-detail-modal').classList.remove('open'); }
+    function addToCartFromDetail(productId) {
+      const mainImg = document.getElementById('detail-main-img');
+      let selectedColor = mainImg ? mainImg.dataset.selectedColor : null;
+      let selectedColorHex = mainImg ? mainImg.dataset.selectedColorHex : null;
+      let selectedColorImage = mainImg ? mainImg.dataset.selectedColorImage : null;
+      if (!selectedColor) {
+        const firstSwatch = document.querySelector('.color-swatch');
+        if (firstSwatch) {
+          selectedColor = firstSwatch.dataset.colorName;
+          selectedColorHex = firstSwatch.dataset.colorHex;
+          selectedColorImage = firstSwatch.dataset.image;
+        }
+      }
+      addToCart(productId, selectedColor, selectedColorHex, selectedColorImage);
+      closeProductDetail();
+    }
+
+    function addToCart(productId, selectedColor = null, selectedColorHex = null, selectedColorImage = null) {
+      const prod = products.find(p => p.id === productId);
+      if (!prod || prod.stock <= 0) { showToast('Produit indisponible'); return; }
+      const existing = cart.find(i => i.id === productId && (!selectedColor || i.selectedColor === selectedColor));
+      if (existing) existing.qty++;
+      else cart.push({ ...prod, qty: 1, selectedColor: selectedColor || '', selectedColorHex: selectedColorHex || '', selectedColorImage: selectedColorImage || '' });
+      saveCart(); renderCart(); showToast(`${prod.name}${selectedColor ? ' (' + selectedColor + ')' : ''} ajouté au panier ✓`);
+    }
+    function removeFromCart(productId, color = '') { cart = cart.filter(i => !(i.id === productId && i.selectedColor === color)); saveCart(); renderCart(); }
+    function changeQty(productId, delta, color = '') { const item = cart.find(i => i.id === productId && i.selectedColor === color); if (!item) return; item.qty += delta; if (item.qty <= 0) removeFromCart(productId, color); else { saveCart(); renderCart(); } }
+    function saveCart() { localStorage.setItem('lumiere_cart', JSON.stringify(cart)); }
+    function getCartTotal() { return cart.reduce((s, i) => s + i.price * i.qty, 0); }
+    function renderCart() {
+      const count = cart.reduce((s, i) => s + i.qty, 0);
+      document.getElementById('cart-count').textContent = count;
+      document.getElementById('cart-total').textContent = formatPrice(getCartTotal()) + ' DA';
+      const itemsEl = document.getElementById('cart-items');
+      if (cart.length === 0) { itemsEl.innerHTML = '<div class="cart-empty">Votre panier est vide</div>'; return; }
+      itemsEl.innerHTML = cart.map(item => {
+        const imgSrc = item.selectedColorImage || (item.image ? window.location.origin + item.image : '');
+        return `
+      <div class="cart-item">
+        <div class="cart-item-img">${imgSrc ? `<img src="${imgSrc}" alt="${item.name}">` : '<div class="no-img">✧</div>'}</div>
+        <div class="cart-item-details">
+          <div class="cart-item-name">${item.name}</div>
+          ${item.selectedColor ? `<div class="cart-item-option"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:${item.selectedColorHex || '#ccc'};margin-right:4px;vertical-align:middle;border:1px solid #ddd;"></span>Couleur : ${item.selectedColor}</div>` : ''}
+          <div class="cart-item-price">${formatPrice(item.price)} DA</div>
+          <div class="cart-item-qty"><button class="qty-btn" onclick="changeQty(${item.id},-1,'${item.selectedColor || ''}')">−</button><span class="qty-num">${item.qty}</span><button class="qty-btn" onclick="changeQty(${item.id},1,'${item.selectedColor || ''}')">+</button></div>
+        </div>
+        <button class="remove-item" onclick="removeFromCart(${item.id},'${item.selectedColor || ''}')">✕</button>
+      </div>
+    `;
+      }).join('');
+    }
+    function toggleCart() { document.getElementById('cart-drawer').classList.toggle('open'); document.getElementById('cart-overlay').classList.toggle('open'); }
+
+    function populateWilayas() {
+      const sel = document.getElementById('f-wilaya');
+      sel.innerHTML = '<option value="">Sélectionnez votre wilaya</option>';
+      WILAYAS.forEach(w => { const opt = document.createElement('option'); opt.value = w.id; opt.textContent = `${w.id < 10 ? '0' + w.id : w.id} - ${w.name}`; sel.appendChild(opt); });
+    }
+    function updateDeliveryFee() { const wid = parseInt(document.getElementById('f-wilaya').value); selectedWilaya = WILAYAS.find(w => w.id === wid) || null; const home = selectedWilaya ? selectedWilaya.home : 0; const bureau = selectedWilaya ? selectedWilaya.bureau : 0; document.getElementById('price-home').textContent = selectedWilaya ? formatPrice(home) + ' DA' : '—'; document.getElementById('price-bureau').textContent = selectedWilaya ? formatPrice(bureau) + ' DA' : '—'; updateOrderSummary(); }
+    function selectDelivery(el) { document.querySelectorAll('.delivery-option').forEach(o => o.classList.remove('selected')); el.classList.add('selected'); deliveryMode = el.querySelector('input').value; updateOrderSummary(); }
+    function getDeliveryFee() { return selectedWilaya ? (deliveryMode === 'home' ? selectedWilaya.home : selectedWilaya.bureau) : 0; }
+    function updateOrderSummary() {
+      const sub = getCartTotal(); const fee = getDeliveryFee(); const total = sub + fee;
+      const itemsHtml = cart.map(i => {
+        const colorDot = i.selectedColorHex ? `<span style="display:inline-block;width:9px;height:9px;border-radius:50%;background:${i.selectedColorHex};border:1px solid rgba(0,0,0,.12);vertical-align:middle;margin-right:4px;"></span>` : '';
+        const colorLabel = i.selectedColor ? ` ${colorDot}<em style="font-style:normal;color:var(--text-mid)">${i.selectedColor}</em>` : '';
+        return `<div class="summary-item"><span>${i.name}${colorLabel} × ${i.qty}</span><span>${formatPrice(i.price * i.qty)} DA</span></div>`;
+      }).join('');
+      document.getElementById('order-summary-box').innerHTML = `<div class="order-summary-title">Résumé de commande</div>${itemsHtml}<div class="summary-item"><span>Livraison (${deliveryMode === 'home' ? 'à domicile' : 'bureau'})</span><span>${fee > 0 ? formatPrice(fee) + ' DA' : 'Sélectionnez une wilaya'}</span></div><div class="summary-item total"><span>Total</span><span>${formatPrice(total)} DA</span></div>`;
+    }
+
+    function openCheckout() { if (cart.length === 0) { showToast('Votre panier est vide'); return; } toggleCart(); updateOrderSummary(); document.getElementById('checkout-modal').classList.add('open'); }
+    function closeCheckout() { document.getElementById('checkout-modal').classList.remove('open'); }
+    async function submitOrder() {
+      const prenom = document.getElementById('f-prenom').value.trim(), nom = document.getElementById('f-nom').value.trim(), tel = document.getElementById('f-tel').value.trim(), wilayaId = document.getElementById('f-wilaya').value, adresse = document.getElementById('f-adresse').value.trim();
+      if (!prenom || !nom || !tel || !wilayaId || !adresse) { showToast('Veuillez remplir tous les champs obligatoires'); return; }
+      const wilayaObj = WILAYAS.find(w => w.id === parseInt(wilayaId)); if (!wilayaObj) { showToast('Wilaya invalide'); return; }
+      const fee = getDeliveryFee(), subtotal = getCartTotal(), total = subtotal + fee;
+      const order = { client: { prenom, nom, tel, wilaya: wilayaObj.name, adresse }, deliveryMode, deliveryFee: fee, items: cart.map(i => ({ id: i.id, name: i.name + (i.selectedColor ? ' (' + i.selectedColor + ')' : ''), price: i.price, qty: i.qty, selectedColor: i.selectedColor || '', selectedColorHex: i.selectedColorHex || '', selectedColorImage: i.selectedColorImage || '' })), subtotal, total, notes: document.getElementById('f-notes').value.trim() };
+      try {
+        const res = await fetch(`${API}/orders`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(order) });
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.error || 'Erreur');
+        cart = []; saveCart(); renderCart();
+        document.getElementById('checkout-form-wrap').innerHTML = `<div class="success-screen"><div class="success-icon">✦</div><h3>Commande confirmée !</h3><p>Merci ${prenom}. Votre commande a été reçue. Nous vous contacterons sur <strong>${tel}</strong> pour confirmer la livraison.</p><div class="order-id">Référence : ${data.orderId}</div><p style="margin-bottom:1.5rem;">Total à payer à la livraison : <strong>${formatPrice(total)} DA</strong></p><button class="btn-primary" onclick="location.reload()">Continuer les achats</button></div>`;
+      } catch (err) { showToast('Erreur : ' + err.message); }
+    }
+
+    async function init() { await loadProducts(1); populateWilayas(); renderCart(); }
+    init();
+  </script>
+</body>
+
+</html>
